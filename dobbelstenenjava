@@ -1,0 +1,44 @@
+var ogen0 = new Image();
+ogen0.src = "assets/images/steen1.png";
+var ogen1 = new Image();
+ogen1.src = "assets/images/steen2.png";
+var ogen2 = new Image();
+ogen2.src = "assets/images/steen3.png";
+var ogen3 = new Image();
+ogen3.src = "assets/images/steen4.png";
+var ogen4 = new Image();
+ogen4.src = "assets/images/steen5.png";
+var ogen5 = new Image();
+ogen5.src = "assets/images/steen6.png";
+
+var teller = 0;
+
+var een, twee, drie, vier, vijf;
+
+var lijst = new Array(5);
+
+function throwdice()
+{
+    lijst[0] = Math.round(Math.random() * 5);
+    lijst[1] = Math.round(Math.random() * 5);
+    lijst[2] = Math.round(Math.random() * 5);
+    lijst[3]  = Math.round(Math.random() * 5);
+    lijst[4] = Math.round(Math.random() * 5);
+    
+    document.images["eerste"].src = eval("ogen" + lijst[0] + ".src");
+    document.images["tweede"].src = eval("ogen" + lijst[1] + ".src");
+    document.images["derde"].src = eval("ogen" + lijst[2] + ".src");
+    document.images["vierde"].src = eval("ogen" + lijst[3] + ".src");
+    document.images["vijfde"].src = eval("ogen" + lijst[4] + ".src");
+
+    teller++;
+    document.getElementById("worpen").innerHTML = teller + ' worpen';
+    var i;
+
+    for (var item = 0; item < lijst.length; item++)
+    {
+        if (lijst[0] == lijst[item +1])
+        {
+          i++ 
+        }
+    }
